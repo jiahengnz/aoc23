@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        int day = 6;
+        int day = 10;
         boolean testInput = true;
 //        boolean testInput = false;
 

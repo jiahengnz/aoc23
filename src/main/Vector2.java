@@ -38,12 +38,28 @@ public class Vector2 {
         return new Vector2(y, -x);
     }
 
+    public Vector2 turnRight() {
+        return new Vector2(-y, x);
+    }
+
+    public boolean isUpDown() {
+        return x == 0;
+    }
+
+    public boolean isLeftRight() {
+        return y == 0;
+    }
+
     public boolean isLeftTurn(Vector2 newDirection) {
         return turnLeft().equals(newDirection);
     }
 
+    public boolean isInBound(int x1, int y1, int x2, int y2) {
+        return x >= x1 && y >= y1 && x < x2 && y < y2;
+    }
+
     public int dot(Vector2 other) {
-        return other.x * this.x + other.y *this.y;
+        return other.x * this.x + other.y * this.y;
     }
 
     public String name() {
@@ -70,5 +86,10 @@ public class Vector2 {
     @Override
     public String toString() {
         return "Vector(" + x + ", " + y + ')';
+    }
+
+
+    public int taxicabDist(Vector2 goal) {
+        return Math.abs(goal.x - x) + Math.abs(goal.y - y);
     }
 }

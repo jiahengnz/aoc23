@@ -111,7 +111,7 @@ public class Day16 implements Day {
             cache.add(activeRay);
 
             Vector2 lookAhead = activeRay.position.add(activeRay.direction);
-            if (!lookAhead.isInBound(0, 0, maxX, maxY)) continue;
+            if (!lookAhead.isInBound(maxX, maxY)) continue;
             char ahead = puzzle[getIndex(lookAhead)];
             if (ahead == '.'
                     || ahead == '|' && activeRay.direction.isUpDown()

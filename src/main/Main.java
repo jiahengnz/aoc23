@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        int day = 18;
-        boolean testInput = true;
-//        boolean testInput = false;
+        int day = 25;
+//        boolean testInput = true;
+        boolean testInput = false;
 
         Day d = (Day) Class.forName("day" + day + ".Day" + day).getDeclaredConstructor().newInstance();
 

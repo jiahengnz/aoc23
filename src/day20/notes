@@ -1,0 +1,9 @@
+&dn [dd, fc, fh, xp] - want dn to send low pulse, so need to receive all high pulses
+	&dd [rs] - want dd to out high pulse, so rs out low pulse 4003
+		&rs [qq, qs, rh, zx, jx, sg, cl, hd] - want rs low high pulse, so all need to be high pulse
+	&fc [cc] - want fc high, so cc low - 3917
+		&cc [ln, mj, mn, nt, cd, cj, cq, pj] want cc low, so all these high
+	&fh [bd] - want fh high, so bd low - 4027
+		&bd [dj, zc, nf, ng, jk, jq, nz, br, kb, gz] want bd low, so all these high
+	&xp [pm] - want high, so pm low - 3919
+		&pm [lt, zd, mx, vf, nr, gj, cf, xg, pc] want pm low, so all these high

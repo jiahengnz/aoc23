@@ -63,13 +63,13 @@ public class Day17 implements Day {
                 return reconstruct_path(cameFrom, current);
 
             List<state> neighbours = new ArrayList<>();
-            if (current.straight < 10 && current.position.add(current.direction).isInBound(0, 0, maxX, maxY)) {
+            if (current.straight < 10 && current.position.add(current.direction).isInBound(maxX, maxY)) {
                 neighbours.add(new state(current.position.add(current.direction), current.direction, current.straight + 1));
             }
-            if (current.straight >= 4 && current.position.add(current.direction.turnLeft()).isInBound(0, 0, maxX, maxY)) {
+            if (current.straight >= 4 && current.position.add(current.direction.turnLeft()).isInBound(maxX, maxY)) {
                 neighbours.add(new state(current.position.add(current.direction.turnLeft()), current.direction.turnLeft(), 1));
             }
-            if (current.straight >= 4 && current.position.add(current.direction.turnRight()).isInBound(0, 0, maxX, maxY)) {
+            if (current.straight >= 4 && current.position.add(current.direction.turnRight()).isInBound(maxX, maxY)) {
                 neighbours.add(new state(current.position.add(current.direction.turnRight()), current.direction.turnRight(), 1));
             }
 

@@ -1,5 +1,6 @@
 package main;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Vector2 {
@@ -12,6 +13,9 @@ public class Vector2 {
         this.y = y;
     }
 
+    public static final Vector2 ZERO = new Vector2(0, 0);
+    public static final Vector2 ONE = new Vector2(1, 1);
+
     public static final Vector2 UP = new Vector2(0, -1);
     public static final Vector2 DOWN = new Vector2(0, 1);
     public static final Vector2 LEFT = new Vector2(-1, 0);
@@ -21,6 +25,8 @@ public class Vector2 {
     public static final Vector2 EAST = RIGHT;
     public static final Vector2 SOUTH = DOWN;
     public static final Vector2 WEST = LEFT;
+
+    public static List<Vector2> directions = List.of(NORTH, Vector2.EAST, Vector2.SOUTH, Vector2.WEST);
 
     public Vector2 flip() {
         return new Vector2(-x, -y);
@@ -32,6 +38,10 @@ public class Vector2 {
 
     public Vector2 add(Vector2 amount) {
         return new Vector2(this.x + amount.x, this.y + amount.y);
+    }
+
+    public Vector2 mult(int scale) {
+        return new Vector2(this.x * scale, this.y * scale);
     }
 
     public Vector2 turnLeft() {
@@ -56,6 +66,10 @@ public class Vector2 {
 
     public boolean isInBound(int x1, int y1, int x2, int y2) {
         return x >= x1 && y >= y1 && x < x2 && y < y2;
+    }
+
+    public boolean isInBound(int maxX, int maxY) {
+        return isInBound(0, 0, maxX, maxY);
     }
 
     public int dot(Vector2 other) {
@@ -91,5 +105,9 @@ public class Vector2 {
 
     public int taxicabDist(Vector2 goal) {
         return Math.abs(goal.x - x) + Math.abs(goal.y - y);
+    }
+
+    public Vector2 modulus(int maxX, int maxY) {
+        return new Vector2((x % maxX + maxX) % maxX, (y % maxY + maxY) % maxY);
     }
 }
